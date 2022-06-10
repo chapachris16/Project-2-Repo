@@ -16,7 +16,7 @@ Users can create new cars specific to them
 The Wireframes:
  
 
-<img src='https://imgur.com/57Bzal7'>
+<img src='https://i.imgur.com/57Bzal7.png'>
 
 The ERD: 
 
