@@ -20,7 +20,7 @@ The Wireframes:
 
 The ERD: 
 
-![ERD](Screen Shot 2022-06-10 at 2.15.48 PM.png)
+[Imgur](https://i.imgur.com/JTNNwfe.png)
 
 
 Route Table:
