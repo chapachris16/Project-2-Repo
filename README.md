@@ -20,7 +20,7 @@ The Wireframes:
 
 The ERD: 
 
-[Imgur](https://i.imgur.com/JTNNwfe.png)
+<img src='https://i.imgur.com/JTNNwfe.png'>
 
 
 Route Table:
