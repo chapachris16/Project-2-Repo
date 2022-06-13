@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('./connections')
 
 // Deconstructing for schema and model
 const {Schema, model} = mongoose

@@ -1,14 +1,13 @@
-const mongoose = require('mongoose')
-
-// Destructuring
+const mongoose = require('./connections')
+const manufacturer = require('./manufacturers')
+// Destructuring to use mongoose
 const {Schema, model} = mongoose
 
-// Schema for car 
-const CarSchema = new Schema(
+// Car Schema
+const carSchema = new Schema(
     {
         name: {type:String, required: true},
         img: {type:String, required: true},
-        manufacturer: {type:String, required: true},
         year: {type:Number, required: true},
         price: {type:Number, required: true},
         hp: {type:Number, required: true},
@@ -16,5 +15,7 @@ const CarSchema = new Schema(
     }
 )
 
-// Model for car
-const Car = model('car', CarSchema)
+// model
+const car = model('Car', carSchema)
+//Exports
+module.exports = car, carSchema
