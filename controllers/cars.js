@@ -8,9 +8,3 @@ const router = express.Router()
 // ROUTES
 
 // INDEX
-router.get('/', (req, res) => {
-    Car.find({})
-    .then((car) => {
-        res.render('cars')
-    })
-})

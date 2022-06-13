@@ -62,3 +62,13 @@ router.post('/login', (req,res) => {
         res.json({error})
     })
 })
+
+router.get("/logout", (req, res) => {
+    // destroy session and redirect to main page
+    req.session.destroy((err) => {
+      res.redirect("/");
+    });
+  });
+  
+// Export
+module.exports = router;

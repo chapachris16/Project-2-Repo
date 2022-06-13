@@ -1,5 +1,5 @@
 const mongoose = require('./connections')
-const manufacturer = require('./manufacturers')
+const Manufacturer = require('./manufacturers')
 // Destructuring to use mongoose
 const {Schema, model} = mongoose
 
@@ -16,6 +16,6 @@ const carSchema = new Schema(
 )
 
 // model
-const car = model('Car', carSchema)
+const Car = model('Car', carSchema)
 //Exports
-module.exports = car, carSchema
+module.exports = Car, carSchema
