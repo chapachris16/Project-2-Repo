@@ -1,9 +1,12 @@
 // Dependencies
+require("dotenv").config()
 const express = require('express') 
 const path = require('path')
 const CarRouter = require('./controllers/cars')
 const ManufacturerRouter = require('./controllers/manufacturers')
 const UserRouter = require('./controllers/users')
+const HomeRouter = require('./controllers/home')
+const middleware = require('./utils/middleware')
 
 // Use Liquid Templating and directory path
 const app = require("liquid-express-views")(express(), {root: [path.resolve(__dirname, 'views/')]})
@@ -19,7 +22,7 @@ middleware(app)
 // ROUTES SETUP 
 app.use('/users', UserRouter)
 app.use('/cars', CarRouter)
-app.use('/manufacturer', ManufacturerRouter)
+app.use('/manufacturers', ManufacturerRouter)
 app.use('/', HomeRouter)
 
 // SERVER LISTENER
