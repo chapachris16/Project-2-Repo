@@ -1,35 +1,42 @@
 // Dependencies
 const express = require('express')
-const Car = require('../models/cars')
+// const Car = require('../models/cars')
 const Manufacturer = require('../models/manufacturers')
 // Create route
 const router = express.Router()
 
 // ROUTES
 
-// INDEX OF MANUFACTURERS
+// // INDEX OF ALL CAR
 
-router.get('/', (req, res) => {
-    res.render('cars/index.liquid')
-})
-// NEW ROUTE FOR MANUFACTURERS  
+// router.get('/', (req, res) => {
+//     res.render('cars/index.liquid')
+// })
+
+// NEW ROUTE FOR CARS
 router.get('/new', (req, res) => {
     res.render('cars/new.liquid')
 })
 
-// POST NEW MANUFACTURER TO INDEX
+// POST NEW CAR
 router.post('/', (req,res) => {
-    Car.create(req.body)
-        .then((car) => {
-            res.redirect('/')
+    Manufacturer.findById(req.params.id, (error, manufacturer) => {
+        manufacturer.cars.push(req.body)
+        manufacturer.save((error) =>{
+            res.redirect(`/manufacturers/${manufacturer.id}`)
         })
-        .catch((error) => {
-            console.log(error)
-            res.json({error})
-        })
+    })
+    // Car.create(req.body)
+    //     .then((car) => {
+    //         res.redirect('/')
+    //     })
+    //     .catch((error) => {
+    //         console.log(error)
+    //         res.json({error})
+    //     })
 })
 
-// UPDATE MANUFACTURERS
+// UPDATE CARS
 router.put('/:id', (req, res) => {
     const id = req.params.id
     Car.findByIdAndUpdate(id, req.body, {new: true})
@@ -38,7 +45,7 @@ router.put('/:id', (req, res) => {
         })
 })
 
-// EDIT MANUFACTURERS ROUTE 
+// EDIT CARS ROUTE 
 
 router.get('/:id/edit', (req, res) => {
     const id = req.params.id
@@ -53,7 +60,7 @@ router.get('/:id/edit', (req, res) => {
 })
 
 
-// DELETE MANUFACTURER 
+// DELETE CARS
 router.delete('/:id', (req, res) => {
     const id = req.params.id
     Car.findByIdAndRemove(id)
@@ -69,11 +76,12 @@ router.delete('/:id', (req, res) => {
 
 
 
-// SHOW ROUTE FOR SPECIFIC MANUFACTURER
+// SHOW ROUTE FOR SPECIFIC CAR
 router.get('/:id', (req, res) => {
     const id  = req.params.id
-    Car.findById(id)
-        .then((manufacturer) => {
+    Manufacturer.findById(id)
+        .then((car) => {
+            console.log(car)
             res.render('cars/show.liquid', {car})
         })
         .catch((error) => {

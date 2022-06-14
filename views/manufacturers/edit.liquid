@@ -1,3 +1,15 @@
 {% layout "layout.liquid" %} {% block content %}
-
+<form action="/manufacturers" method="post">
+    <fieldset>
+      <legend>Edit {{manufacturer.name}}</legend>
+      <label>
+        NAME:<input type="text" name="name" placeholder="enter manufacturer name" value="{{manufacturer.name}}" />
+      </label>
+      <label>
+        Image:<input type="text" name="img" placeholder="enter image link here" value="manufacturer.img" />
+      </label>
+    </fieldset>
+    <input type="submit" value="create new manufacturer" />
+  </form>
+</div>
 {% endblock %}

@@ -1,5 +1,5 @@
 const mongoose = require('./connections')
-const Car = require('./cars')
+// const Car = require('./cars')
 // Destructuring to use mongoose
 const {Schema, model} = mongoose
 
@@ -19,10 +19,10 @@ const carSchema = new Schema(
 const manufacturerSchema = new Schema(
     {
         name: {type: String, required: true},
-        models: [carSchema],
-        model_images: [String],
-        avg_cost: Number,
-        avg_hp: Number,
+        img: String,
+        cars: [carSchema],
+        avg_cost: {type:Number, default: 0},
+        avg_hp: {type:Number, default: 0},
     }
 )
 // model
