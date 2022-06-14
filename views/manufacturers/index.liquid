@@ -1,3 +1,15 @@
 {% layout "layout.liquid" %} {% block content %}
-
-{% endblock %}
+<div>
+    <a href="/manufacturers/new"><button>Enter New Manufacturer</button></a>
+  
+    {% for manufacturer in manufacturers %}
+    <article>
+      <a href="/manufacturers/{{ manufacturer._id }}">
+        <h2>
+          {{manufacturer.name}}
+        </h2>
+      </a>
+    </article>
+    {% endfor %}
+</div>
+{%endblock%}

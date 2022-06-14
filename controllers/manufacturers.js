@@ -2,7 +2,6 @@ const express = require('express')
 const Car = require('../models/cars')
 const manufacturer = require('../models/manufacturers')
 const Manufacturer = require('../models/manufacturers')
-const { route } = require('./cars')
 
 // Create route
 const router = express.Router()
@@ -10,7 +9,15 @@ const router = express.Router()
 // INDEX OF MANUFACTURERS
 
 router.get('/', (req, res) => {
-    res.render('manufacturers/index.liquid')
+    Manufacturer.find({})
+        .then((manufacturers) => {
+            console.log(manufacturers)
+            res.render('manufacturers/index.liquid', {manufacturers})
+        })
+        .catch((error) => {
+            console.log(error)
+            res.json({error})
+        })
 })
 // NEW ROUTE FOR MANUFACTURERS  
 router.get('/new', (req, res) => {

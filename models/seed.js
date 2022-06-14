@@ -5,10 +5,51 @@ const Manufacturer = require('./manufacturers')
 const db = mongoose.connection
 
 db.on("open", () => {
-    // ////////////////////////////////////
-    // ////////////////////////////////////
-    // ///// Seed for manufacturer here //
-    // ////////////////////////////////////
+  const startManufacturers = [
+    {
+        name: 'Toyota',
+        models: [],
+        model_images: [],
+        avg_cost: 0,
+        avg_hp: 0,
+    },
+
+    {
+        name: 'Subaru',
+        models: [],
+        model_images: [],
+        avg_cost:0,
+        avg_hp: 0
+    },
+    {
+        name: 'Honda',
+        models: [],
+        model_images: [],
+        avg_cost:0,
+        avg_hp: 0
+    },
+    {
+        name: 'Ford',
+        models: [],
+        model_images: [],
+        avg_cost:0,
+        avg_hp: 0
+    },
+    {
+        name: 'Chevrolet',
+        models: [],
+        model_images: [],
+        avg_cost:0,
+        avg_hp: 0
+    },
+    {
+        name: 'Mazdac',
+        models: [],
+        model_images: [],
+        avg_cost:0,
+        avg_hp: 0
+    },
+  ]
     
     // ////////////////////////////////////
     // ////////////////////////////////////
@@ -33,21 +74,21 @@ db.on("open", () => {
         res.json({error})
     })
 
-    Car.deleteMany({Car})
-    .then((deletedCars) => {
-        Car.create(startCars)
-        .then((newCars)=>{
-            console.log(newCars)
-            db.close()
-        })
-        .catch((error) => {
-            console.log(error)
-            res.json({error})
-            db.close()
-        })
-    })
-    .catch((error) => {
-        console.log(error)
-        res.json({error})
-    })
+    // Car.deleteMany({Car})
+    // .then((deletedCars) => {
+    //     Car.create(startCars)
+    //     .then((newCars)=>{
+    //         console.log(newCars)
+    //         db.close()
+    //     })
+    //     .catch((error) => {
+    //         console.log(error)
+    //         res.json({error})
+    //         db.close()
+    //     })
+    // })
+    // .catch((error) => {
+    //     console.log(error)
+    //     res.json({error})
+    // })
 })
