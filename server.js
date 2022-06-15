@@ -21,7 +21,7 @@ middleware(app)
 
 // ROUTES SETUP 
 app.use('/users', UserRouter)
-app.use('/cars', CarRouter)
+// app.use('/manufacturers/:id/cars', CarRouter)
 app.use('/manufacturers', ManufacturerRouter)
 app.use('/', HomeRouter)
 

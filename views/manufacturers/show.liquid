@@ -4,14 +4,19 @@
         <h2>
             {{ manufacturer.name }}
         </h2>
-        {%for models in manufacturer %}
-        <a href="/cars/{{manufacturer.cars[forloop.index0]._id}}"><h3>{{ manufacturer.cars[forloop.index0].name}}</h3>
+        {%for cars in manufacturer %}
+        <a href="/manufacturers/{{manufacturer._id}}/cars/{{manufacturer.cars[forloop.index0]._id}}"><h3>{{ manufacturer.cars[forloop.index0].name}}</h3>
         <img src={{manufacturer.cars[forloop.index0].img}}>
         </a>
         {%endfor%}
         <a href="/manufacturers/{{ manufacturer._id }}/edit"><button>Edit</button></a>
+        
+        <a href="/manufacturers/{{ manufacturer._id }}/cars/new"><button>Enter new vehicle model</button></a>
+
+
+
         <form action="/manufacturers/{{ manufacturer._id }}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete" />
+            <input type="submit" value="Delete {{manufacturer.name}}" />
         </form>
         <a href="/manufacturers/"><button>Back to Manufacturers Page</button></a>
         </article>
