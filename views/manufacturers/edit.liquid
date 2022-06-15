@@ -1,15 +1,15 @@
 {% layout "layout.liquid" %} {% block content %}
-<form action="/manufacturers" method="post">
+<form action="/manufacturers/{{manufacturer._id}}?_method=PUT" method="post">
     <fieldset>
       <legend>Edit {{manufacturer.name}}</legend>
       <label>
         NAME:<input type="text" name="name" placeholder="enter manufacturer name" value="{{manufacturer.name}}" />
       </label>
       <label>
-        Image:<input type="text" name="img" placeholder="enter image link here" value="manufacturer.img" />
+        Image:<input type="text" name="img" placeholder="enter image link here" value="{{manufacturer.img}}" />
       </label>
     </fieldset>
-    <input type="submit" value="create new manufacturer" />
+    <input type="submit" value=" Submit edits to manufacturer" />
   </form>
 </div>
 {% endblock %}

@@ -28,7 +28,7 @@ router.get('/new', (req, res) => {
 router.post('/', (req,res) => {
     Manufacturer.create(req.body)
         .then((manufacturer) => {
-            res.redirect('/')
+            res.redirect('/manufacturers')
         })
         .catch((error) => {
             console.log(error)
