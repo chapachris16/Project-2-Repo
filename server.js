@@ -6,6 +6,7 @@ const ManufacturerRouter = require('./controllers/manufacturers')
 const UserRouter = require('./controllers/users')
 const HomeRouter = require('./controllers/home')
 const middleware = require('./utils/middleware')
+const MongoStore = require("connect-mongo")
 
 // Use Liquid Templating and directory path
 const app = require("liquid-express-views")(express(), {root: [path.resolve(__dirname, 'views/')]})
