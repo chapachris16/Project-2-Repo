@@ -23,6 +23,8 @@ app.use('/users', UserRouter)
 app.use('/manufacturers', ManufacturerRouter)
 app.use('/', HomeRouter)
 
+app.listen(process.env.PORT || 3000)
+
 // SERVER LISTENER
 const PORT = process.env.PORT
 app.listen(PORT, () => {
