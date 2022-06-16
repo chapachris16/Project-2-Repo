@@ -1,6 +1,5 @@
 // DEPENDENCIES
 const mongoose = require('./connections')
-const Car = require('./cars')
 const Manufacturer = require('./manufacturers')
 const db = mongoose.connection
 

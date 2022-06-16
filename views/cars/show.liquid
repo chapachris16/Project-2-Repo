@@ -2,9 +2,9 @@
 <div>
     <article>
     <h2>
-        {{manufacturer.cars.name}}
+        {{manufacturer.cars[index].name}}
     </h2>
-    <img src={{manufacturer.cars.img}}>
+    <img src={{manufacturer.cars[index].img}}>
     </a>
     <a href="/manufacturers/{{manufacturer._id}}/cars/{{manufacturer.cars[0]._id}}/edit"><button>Edit</button></a>
     <form action="/manufacturers/{{ manufacturer._id }}?_method=DELETE" method="POST">

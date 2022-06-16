@@ -1,7 +1,5 @@
 const express = require('express')
 const { Types } = require('mongoose')
-const Car = require('../models/cars')
-const manufacturer = require('../models/manufacturers')
 const Manufacturer = require('../models/manufacturers')
 
 // Create route
@@ -135,18 +133,21 @@ router.get('/:id', (req, res) => {
 
 
 // SHOW ROUTE FOR SPECIFIC CAR
-router.get('/:id/cars/:car_id', async (req, res) => {
+router.get('/:id/cars/:car_id', (req, res) => {
     const id = req.params.id
     const car_id = req.params.car_id
-    let manufacturerA = await Manufacturer.findOne({id})
-    console.log(manufacturerA.cars[0])
-        // .then((manufacturer) => {
-        //     console.log(car_id)
-        //     res.render('cars/show.liquid', {manufacturer, car_id})
-        // })
-        // .catch((error) => {
-        //     console.log(error)
-        //     res.json({error})
-        // })
+    Manufacturer.findById(id)
+        .then((manufacturer) => {
+            console.log(manufacturer.cars[0])
+            let index = manufacturer.cars.findIndex(_id => _id === (`${car_id}`))
+            console.log(car_id)
+            console.log(index)
+            console.log(manufacturer.cars[index])
+            res.render('cars/show.liquid', {index,manufacturer, car_id,})
+        })
+        .catch((error) => {
+            console.log(error)
+            res.json({error})
+        })
 })
 module.exports = router
