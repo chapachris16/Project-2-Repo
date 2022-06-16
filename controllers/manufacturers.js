@@ -138,8 +138,8 @@ router.get('/:id/cars/:car_id', (req, res) => {
     const car_id = req.params.car_id
     Manufacturer.findById(id)
         .then((manufacturer) => {
-            console.log(manufacturer.cars[0])
-            let index = manufacturer.cars.findIndex(_id => _id === (`${car_id}`))
+            // let index = manufacturer.cars.findIndex(cars => cars._id === `(${car_id})`)
+            let index = manufacturer.cars.findIndex(car => car._id === `${car_id}`)
             console.log(car_id)
             console.log(index)
             console.log(manufacturer.cars[index])
