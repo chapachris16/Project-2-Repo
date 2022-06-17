@@ -8,9 +8,9 @@ Everybody has their dream cars, whether its a 911 GT3 Rs or a Range Rover, every
 This app will store the data to their specific user session. Maybe one day you'll get rich and have your list saved to know what cars to buy!
 
 The User Story:
-Users will be able to sign up ad create an account
+Users will be able to sign up and create an account
 Users can select and store cars that they want in their respective accounts and be able to edit and delete certain info.
-Users can create new cars specific to them
+
 
 
 The Wireframes:
@@ -63,6 +63,3 @@ Have functioning home page, index page, show page, edit, and new page
 Pages update, edit, delete , create correctly
 
 All routes are correctly linked to respective pages, and data.
-
-
-Stretch goals / ICE BOX:
