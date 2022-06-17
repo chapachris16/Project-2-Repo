@@ -19,7 +19,7 @@ router.post('/signup', async (req, res) => {
     );
     User.create(req.body)
     .then((user) => {
-        res.redirect('/users/login.liquid')
+        res.redirect('/login.liquid')
     })
     .catch((error) => {
         console.log(error)
@@ -45,7 +45,7 @@ router.post('/login', (req,res) => {
             if(result){
                 req.session.username = username
                 req.session.loggedIn = true
-                res.redirect('users/show')
+                res.redirect('/manufacturers')
             }
             // if password is incorrect send error
             else{

@@ -4,11 +4,22 @@
     <h2>
         {{manufacturer.cars[index].name}}
     </h2>
+    
     <img src={{manufacturer.cars[index].img}}>
+    <h2>
+       Year: {{manufacturer.cars[index].year}}
+    </h2> <h2>
+       Price: ${{manufacturer.cars[index].price}}
+    </h2> <h2>
+        {{manufacturer.cars[index].hp}} horsepower
+    </h2>
+    <h2>
+        Seats:{{manufacturer.cars[index].seats}}
+    </h2>
     </a>
-    <a href="/manufacturers/{{manufacturer._id}}/cars/{{manufacturer.cars[0]._id}}/edit"><button>Edit</button></a>
-    <form action="/manufacturers/{{ manufacturer._id }}?_method=DELETE" method="POST">
-        <input type="submit" value="Delete" />
+    <!-- <a href="/manufacturers/{{manufacturer._id}}/cars/{{manufacturer.cars[index]._id}}/edit"><button>Edit</button></a> -->
+    <form action="/manufacturers/{{ manufacturer._id }}/cars/{{manufacturer.cars[index]._id}}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete {{manufacturer.cars[index].name}}" />
     </form>
     <a href="/manufacturers/{{manufacturer._id}}"><button>Back to {{manufacturer.name}}'s Page</button></a>
     </article>

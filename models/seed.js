@@ -25,8 +25,6 @@ db.on("open", () => {
             seats: 4
         },
         ],
-        avg_cost: 0,
-        avg_hp: 0,
     },
 
     {
@@ -43,6 +41,7 @@ db.on("open", () => {
         avg_cost:0,
         avg_hp: 0
     },
+    
     {
         name: 'Honda',
         img: 'https://w7.pngwing.com/pngs/710/441/png-transparent-honda-logo-car-honda-cr-v-honda-accord-honda-angle-text-logo-thumbnail.png',
@@ -54,9 +53,8 @@ db.on("open", () => {
             hp: 306,
             seats: 5
         },],
-        avg_cost:0,
-        avg_hp: 0
     },
+
     {
         name: 'Ford',
         img: 'https://w7.pngwing.com/pngs/592/644/png-transparent-ford-logo-ford-motor-company-car-ford-mustang-chrysler-ford-logo-icon-miscellaneous-emblem-trademark-thumbnail.png',
@@ -68,9 +66,8 @@ db.on("open", () => {
             hp: 647,
             seats: 2
         },],
-        avg_cost:0,
-        avg_hp: 0
     },
+
     {
         name: 'Chevrolet',
         img: 'https://w7.pngwing.com/pngs/332/661/png-transparent-chevrolet-aveo-general-motors-car-chevrolet-express-chevrolet-angle-logo-car-thumbnail.png',
@@ -85,6 +82,7 @@ db.on("open", () => {
         avg_cost:0,
         avg_hp: 0
     },
+
     {
         name: 'Mazda',
         img: 'https://w7.pngwing.com/pngs/627/216/png-transparent-mazda-logo-mazda-rx-8-car-mazda-premacy-mazda-familia-mazda-emblem-text-trademark-thumbnail.png',

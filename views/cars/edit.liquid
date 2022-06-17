@@ -1,24 +1,24 @@
 {% layout "layout.liquid" %} {% block content %}
-<form action="/manufacturers/{{manufacturer._id}}/cars/{{manufacturer.cars[0]._id}}?_method=PUT" method="post">
+<form action="/manufacturers/{{manufacturer._id}}/cars/{{manufacturer.cars[index]._id}}?_method=PUT" method="post">
     <fieldset>
-      <legend>Edit {{manufacturer.cars[0].name}}</legend>
+      <legend>Edit {{manufacturer.cars[index].name}}</legend>
       <label>
-        NAME:<input type="text" name="name" placeholder="enter model name" value="{{manufacturer.cars[0].name}}" />
+        NAME:<input type="text" name="name" placeholder="enter model name" value="{{manufacturer.cars[index].name}}" />
       </label>
       <label>
-        Image:<input type="text" name="img" placeholder="enter image link here" value="{{manufacturer.cars[0].img}}" />
+        Image:<input type="text" name="img" placeholder="enter image link here" value="{{manufacturer.cars[index].img}}" />
       </label>
       <label>
-        Year:<input type="number" name="year" placeholder="enter year here" value="{{manufacturer.cars[0].year}}" />
+        Year:<input type="number" name="year" placeholder="enter year here" value="{{manufacturer.cars[index].year}}" />
       </label>
       <label>
-        Price:<input type="number" name="price" placeholder="enter price here" value="{{manufacturer.cars[0].price}}" />
+        Price:<input type="number" name="price" placeholder="enter price here" value="{{manufacturer.cars[index].price}}" />
       </label>
       <label>
-        Horsepower:<input type="number" name="seats" placeholder="enter horsepower here" value="{{manufacturer.cars[0].hp}}" />
+        Horsepower:<input type="number" name="seats" placeholder="enter horsepower here" value="{{manufacturer.cars[index].hp}}" />
       </label>
       <label>
-        Seats:<input type="number" name="seats" placeholder="enter number of seats" value="{{manufacturer.cars[0].seats}}" />
+        Seats:<input type="number" name="seats" placeholder="enter number of seats" value="{{manufacturer.cars[index].seats}}" />
       </label>
     </fieldset>
     <input type="submit" value=" Submit edits to model" />
