@@ -30,7 +30,12 @@ HTTP Method<br>(Verb) | Path/Endpoint/URI  | CRUD Operation | Typical<br>Control
 GET     | /                    | path to home screen for log in or signup | home |
 GET     | /manufacturers       | Shows index of all manufacturers | index |
 POST    | /manufacturers       | Create a new manufacturer | create |
+GET     | /manufacturers/:id   | show cars by manufacturer  | show |
 PUT     | /manufacturers/:id   | Update specified manufacturer  | update |
+GET     | /manufacturers/:id/cars/:car_id  | Delete specified manufacturer | delete |
+DELETE  | /manufacturers/:id   | Delete specified manufacturer | delete |
+DELETE  | /manufacturers/:id   | Delete specified manufacturer | delete |
+DELETE  | /manufacturers/:id   | Delete specified manufacturer | delete |
 DELETE  | /manufacturers/:id   | Delete specified manufacturer | delete |
 
 Technologies Used:
