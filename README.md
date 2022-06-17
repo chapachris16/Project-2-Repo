@@ -25,6 +25,13 @@ The ERD:
 
 Route Table:
 
+HTTP Method<br>(Verb) | Path/Endpoint/URI  | CRUD Operation | Typical<br>Controller Action |
+-----------|------------------|------------------|:---:|
+GET     | /                    | path to home screen for log in or signup | home |
+GET     | /manufacturers       | Shows index of all manufacturers | index |
+POST    | /manufacturers       | Create a new manufacturer | create |
+PUT     | /manufacturers/:id   | Update specified manufacturer  | update |
+DELETE  | /manufacturers/:id   | Delete specified manufacturer | delete |
 
 Technologies Used:
 
