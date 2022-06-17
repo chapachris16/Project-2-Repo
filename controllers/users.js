@@ -19,7 +19,7 @@ router.post('/signup', async (req, res) => {
     );
     User.create(req.body)
     .then((user) => {
-        res.redirect('/login.liquid')
+        res.redirect('/users/login')
     })
     .catch((error) => {
         console.log(error)

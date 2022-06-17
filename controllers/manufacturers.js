@@ -76,40 +76,40 @@ router.put("/:id", (req, res) => {
   );
 });
 
-// UPDATE CARS ROUTE
-router.put('/:id/cars/:car_id', (req, res) => {
-    const id = req.params.id
-    const car_id = req.params.car_id
-    Manufacturer.findById(id)
-        .then((manufacturer) => {
-            const cars = manufacturer.cars
-            let index = cars.findIndex(cars => cars.id === `${car_id}`)
-            cars[index].name = req.body.name
-            cars[index].img = req.body.img
-            cars[index].year = req.body.year
-            cars[index].hp = req.body.hp
-            cars[index].seats = req.body.seats
-            manufacturer.save((error) => {
-                res.redirect(`/manufacturers/${id}/cars/${car_id}`);
-            })
-        })
-})
+// // UPDATE CARS ROUTE
+// router.put('/:id/cars/:car_id', (req, res) => {
+//     const id = req.params.id
+//     const car_id = req.params.car_id
+//     Manufacturer.findById(id)
+//         .then((manufacturer) => {
+//             const cars = manufacturer.cars
+//             let index = cars.findIndex(cars => cars.id === `${car_id}`)
+//             cars[index].name = req.body.name
+//             cars[index].img = req.body.img
+//             cars[index].year = req.body.year
+//             cars[index].hp = req.body.hp
+//             cars[index].seats = req.body.seats
+//             manufacturer.save((error) => {
+//                 res.redirect(`/manufacturers/${id}/cars/${car_id}`);
+//             })
+//         })
+// })
 
-// EDIT CARS ROUTE
-router.get("/:id/cars/:car_id/edit", (req, res) => {
-  const id = req.params.id;
-  const car_id = req.params.car_id;
-  Manufacturer.findById(id)
-    .then((manufacturer) => {
-      const cars = manufacturer.cars;
-      let index = cars.findIndex((cars) => cars.id === `${car_id}`);
-      res.render("cars/edit.liquid", { manufacturer, index });
-    })
-    .catch((error) => {
-      console.log(error);
-      res.json({ error });
-    });
-});
+// // EDIT CARS ROUTE
+// router.get("/:id/cars/:car_id/edit", (req, res) => {
+//   const id = req.params.id;
+//   const car_id = req.params.car_id;
+//   Manufacturer.findById(id)
+//     .then((manufacturer) => {
+//       const cars = manufacturer.cars;
+//       let index = cars.findIndex((cars) => cars.id === `${car_id}`);
+//       res.render("cars/edit.liquid", { manufacturer, index });
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//       res.json({ error });
+//     });
+// });
 
 // EDIT MANUFACTURERS ROUTE
 
@@ -184,6 +184,7 @@ router.get("/:id/cars/:car_id", (req, res) => {
       const cars = manufacturer.cars;
       console.log(cars);
       let index = cars.findIndex((cars) => cars.id === `${car_id}`);
+      // let index = cars.findIndex((cars) => cars._id === `${car_id}`); WRONGGGGGGGGGGGGG
       //     // console.log(car_id)
       console.log(index);
       console.log(manufacturer.cars[index]);
