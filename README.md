@@ -29,14 +29,17 @@ HTTP Method<br>(Verb) | Path/Endpoint/URI  | CRUD Operation | Typical<br>Control
 -----------|------------------|------------------|:---:|
 GET     | /                    | path to home screen for log in or signup | home |
 GET     | /manufacturers       | Shows index of all manufacturers | index |
+GET    | /manufacturers/new       | Page to create new manufacturer | new |
 POST    | /manufacturers       | Create a new manufacturer | create |
 GET     | /manufacturers/:id   | show cars by manufacturer  | show |
+GET     | /manufacturers/:id/edit   | edit specified manufacturer  | edit|
+GET     | /manufacturers/:id/new   | create new vehicle page in specified manufacturer  | new |
+POST    | /manufacturers/:id   | Post new car model to manufactures page  | create |
 PUT     | /manufacturers/:id   | Update specified manufacturer  | update |
-GET     | /manufacturers/:id/cars/:car_id  | Delete specified manufacturer | delete |
-DELETE  | /manufacturers/:id   | Delete specified manufacturer | delete |
-DELETE  | /manufacturers/:id   | Delete specified manufacturer | delete |
-DELETE  | /manufacturers/:id   | Delete specified manufacturer | delete |
-DELETE  | /manufacturers/:id   | Delete specified manufacturer | delete |
+GET     | /manufacturers/:id/cars/:car_id  | View specific vehicle model and specs| show |
+DELETE  | /manufacturers/:id  | Delete specified manufacturer | delete |
+DELETE  | /manufacturers/:id/cars/:car_id  | Delete specified car | delete |
+
 
 Technologies Used:
 
