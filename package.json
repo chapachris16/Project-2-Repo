@@ -19,7 +19,9 @@
   "description": "Title: Dream and Drive",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "netlify-cli": "^12.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chapachris16/Project-2-Repo.git"
